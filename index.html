@@ -47,22 +47,95 @@
     <header>
       <!-- ===== Start: NavBar Section ===== -->
       <nav class="bg-[#15803D]">
-        <section class="w-10/12 mx-auto flex justify-between items-center py-5 text-white">
+        <section
+          class="w-10/12 mx-auto flex justify-between items-center py-5 text-white"
+        >
           <!-- ===== Start: Logo ===== -->
           <a class="font-medium text-xl" href="#">Green Earth</a>
           <!-- ===== End: Logo ===== -->
 
           <!-- ===== Start: Nav Links ===== -->
-          <ul class="flex gap-6 text-sm ">
-            <li><a class="cursor-pointer hover:underline" href="#about-section">About</a></li>
-            <li><a class="cursor-pointer hover:underline" href="#gallery">Gallery</a></li>
-            <li><a class="cursor-pointer hover:underline" href="#plantTree">Plant A Tree</a></li>
+          <ul class="hidden md:flex gap-6 text-sm">
+            <li>
+              <a class="cursor-pointer hover:underline" href="#about-section"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="cursor-pointer hover:underline" href="#gallery"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a class="cursor-pointer hover:underline" href="#plantTree"
+                >Plant A Tree</a
+              >
+            </li>
           </ul>
           <!-- ===== End: Nav Links ===== -->
 
           <!-- ===== Start: Plant A tree Btn ===== -->
-          <button class="btn text-[#15803D] bg-[#FACC15] border-none rounded-full">Plant A Tree</button>
+          <button
+            class="hidden md:inline-block btn text-[#15803D] bg-[#FACC15] border-none rounded-full"
+          >
+            Plant A Tree
+          </button>
           <!-- ===== End: Plant A tree Btn ===== -->
+
+          <!-- ===== Start: Mobile Menu ===== -->
+          <div class="block md:hidden">
+            <i
+              onclick="showNav()"
+              class="fa-solid fa-bars text-xl cursor-pointer"
+            ></i>
+          </div>
+
+          <div
+            id="mobileNav"
+            class="block md:hidden absolute right-[-200px] bg-[#15803D] top-0 z-20 px-5 pt-5 h-full space-y-3 transition-all duration-300"
+          >
+            <!-- ===== Start: Close Icon ===== -->
+            <div>
+              <i
+                onclick="closeNav()"
+                class="fa-solid fa-xmark text-xl cursor-pointer"
+              ></i>
+            </div>
+            <!-- ===== End: Close Icon ===== -->
+            <!-- ===== Start: Nav Links ===== -->
+            <ul class="flex flex-col gap-2 text-sm pt-4">
+              <li>
+                <a class="cursor-pointer hover:underline" href="#about-section"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="cursor-pointer hover:underline" href="#gallery"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a class="cursor-pointer hover:underline" href="#plantTree"
+                  >Plant A Tree</a
+                >
+              </li>
+            </ul>
+            <!-- ===== End: Nav Links ===== -->
+
+            <!-- ===== Start: Plant A tree Btn ===== -->
+            <button
+              class="btn text-[#15803D] bg-[#FACC15] border-none rounded-lg"
+            >
+              Plant A Tree
+            </button>
+            <!-- ===== End: Plant A tree Btn ===== -->
+          </div>
+          <!-- ===== End: Mobile Menu ===== -->
+          <div
+            onclick="closeNav()"
+            id="overlay"
+            class="bg-[#000000b3] hidden fixed inset-0 z-10"
+          ></div>
         </section>
       </nav>
       <!-- ===== End: NavBar Section ===== -->
