@@ -15,10 +15,58 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- ===== End: DaisyUI and Tailwind CDN ===== -->
+
+    <!-- ===== Start: Google Font ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ===== End: Google Font ===== -->
+
+    <!-- ===== Start: Font Awesome CDN ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ===== End: Font Awesome CDN ===== -->
+
+    <!-- style  -->
+    <style>
+      body {
+        font-family: "Work Sans", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <!-- ===== Start: Header Section ===== -->
-    <header></header>
+    <header>
+      <!-- ===== Start: NavBar Section ===== -->
+      <nav class="bg-[#15803D]">
+        <section class="w-10/12 mx-auto flex justify-between items-center py-5 text-white">
+          <!-- ===== Start: Logo ===== -->
+          <a class="font-medium text-xl" href="#">Green Earth</a>
+          <!-- ===== End: Logo ===== -->
+
+          <!-- ===== Start: Nav Links ===== -->
+          <ul class="flex gap-6 text-sm ">
+            <li><a class="cursor-pointer hover:underline" href="#about-section">About</a></li>
+            <li><a class="cursor-pointer hover:underline" href="#gallery">Gallery</a></li>
+            <li><a class="cursor-pointer hover:underline" href="#plantTree">Plant A Tree</a></li>
+          </ul>
+          <!-- ===== End: Nav Links ===== -->
+
+          <!-- ===== Start: Plant A tree Btn ===== -->
+          <button class="btn text-[#15803D] bg-[#FACC15] border-none rounded-full">Plant A Tree</button>
+          <!-- ===== End: Plant A tree Btn ===== -->
+        </section>
+      </nav>
+      <!-- ===== End: NavBar Section ===== -->
+    </header>
     <!-- ===== End: Header Section ===== -->
 
     <!-- ===== Start: Main Section ===== -->
