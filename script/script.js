@@ -30,16 +30,26 @@ const loadCategory = async () => {
 
 // Function to display categories
 const showCategory = (categories) => {
+//   console.log(categories);
   categoriesContainer.innerHTML = `<li class="text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer ">All tress</li>`;
-  console.log(categoriesContainer);
   // console.log(categories);
   categories.forEach((category) => {
     const categoryName = category.category_name;
-    console.log(categoryName);
+    const id = category.id;
     categoriesContainer.innerHTML += `
-            <li class="text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
+            <li id='${id}' class="text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
     `;
+    loadTreesByCategory(id);
   });
+};
+
+// Function to load tress by categories
+const loadTreesByCategory = async (id) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/category/${id}`
+  );
+  const data = await res.json();
+  console.log(data.plants);
 };
 
 // Call Load Category Function to load category
