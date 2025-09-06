@@ -1,3 +1,6 @@
+// Use Strict mode
+"use strict";
+
 // navbar functionality for mobile
 const mobileNav = document.getElementById("mobileNav");
 const overlay = document.getElementById("overlay");
@@ -11,3 +14,21 @@ const closeNav = () => {
   mobileNav.classList.remove("right-0");
   overlay.classList.add("hidden");
 };
+
+// Main Features
+const categoriesContainer = document.querySelector("#categoriesContainer");
+
+// Function to load the category
+const loadCategory = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/categories"
+  );
+  const data = await res.json();
+  const categories = data.categories;
+  console.log(categories);
+};
+
+
+
+// Call Load Category Function to load category
+loadCategory();
