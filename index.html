@@ -144,12 +144,27 @@
       <section
         class="bg-[#CFF0DC] flex flex-col md:flex-row items-center justify-between"
       >
-        <img src="./assets/hero-leaf1.png" alt="leaf image on left side" />
-        <div class="text-center">
-          <h1 class="text-[#1F2937] text-5xl font-bold">
+        <!-- ===== Start: Mobile Banar Logo ===== -->
+        <div class="flex md:hidden w-42 justify-center mb-2 mt-4">
+          <img
+            class="w-full"
+            src="./assets/logo.png"
+            alt="leaf image"
+            loading="lazy"
+          />
+        </div>
+        <!-- ===== End: Mobile Banar Logo ===== -->
+        <img
+          class="hidden md:inline-block self-end md:w-52 xl:w-72 2xl:w-fit"
+          src="./assets/hero-leaf1.png"
+          alt="leaf image on left side"
+          loading="lazy"
+        />
+        <div class="text-center md:py-4">
+          <h1 class="text-[#1F2937] text-2xl 2xl:text-5xl font-bold">
             Plant a Tree, Grow a Future
           </h1>
-          <p class="text-[#1F2937] my-6">
+          <p class="text-[#1F2937] text-sm md:text-base xl: pt-2 p-4 md:my-0 2xl:my-6">
             Join our mission to plant 1 million trees and make the Earth greener
             for future generations.
           </p>
@@ -161,7 +176,12 @@
           </button>
           <!-- ===== End: Get Involved ===== -->
         </div>
-        <img src="./assets/hero-leaf2.png" alt="leaf image on right side" />
+        <img
+          class="hidden md:inline-block self-end md:w-52 xl:w-72 2xl:w-fit"
+          src="./assets/hero-leaf2.png"
+          alt="leaf image on right side"
+          loading="lazy"
+        />
       </section>
       <!-- ===== End: Banar Section ===== -->
     </header>
