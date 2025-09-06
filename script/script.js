@@ -32,21 +32,33 @@ const loadCategory = async () => {
 // Function to display categories
 const showCategory = (categories) => {
   //   console.log(categories);
-  categoriesContainer.innerHTML = `<li id="allTress" class="text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer ">All tress</li>`;
+  categoriesContainer.innerHTML = `<li id="allTrees" class="category-btn text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer ">All tress</li>`;
   //   console.log(categories);
   categories.forEach((category) => {
     const categoryName = category.category_name;
     const id = category.id;
     categoriesContainer.innerHTML += `
-            <li id='${id}' class="text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
+            <li id='${id}' class="category-btn text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
     `;
   });
 
   // load Trees category
   categoriesContainer.addEventListener("click", (e) => {
-    const id = e.target.id;
-    loadTreesByCategory(id);
+    if (e.target.localName === "li") {
+      const id = e.target.id;
+      id !== "allTrees" ? loadTreesByCategory(id) : loadAllTreesCategory(id);
+
+      // active class feature
+      const categoryBtn = document.querySelectorAll(".category-btn");
+      categoryBtn.forEach((btn) => {
+        btn.classList.remove("bg-green-700", "text-white");
+      });
+      e.target.classList.add("bg-green-700", "text-white");
+    }
   });
+  document
+    .getElementById("allTrees")
+    .classList.add("bg-green-700", "text-white");
 };
 
 // Function to load tress by categories
@@ -93,7 +105,7 @@ const showTressByCategory = (trees) => {
                         <p class="font-medium text-[#1F2937]">$<span>${tree.price}</span></p>
                     </div>
                     <div class="card-actions justify-end mt-3">
-                        <button class="btn bg-[#15803D] text-white w-full rounded-full">Add to Cart</button>
+                        <button class="btn bg-[#15803D] hover:bg-[#127737] text-white w-full rounded-full">Add to Cart</button>
                     </div>
                 </div>  
             </div>  
@@ -104,5 +116,18 @@ const showTressByCategory = (trees) => {
   }
 };
 
+// Function to load All Trees Category by Default
+const loadAllTreesCategory = async () => {
+  try {
+    const res = await fetch("https://openapi.programming-hero.com/api/plants");
+    const data = await res.json();
+    showTressByCategory(data.plants);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 // Call Load Category Function to load category
 loadCategory();
+
+loadAllTreesCategory();
