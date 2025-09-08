@@ -82,7 +82,7 @@ const loadTreesByCategory = async (id) => {
     const res = await fetch(
       `https://openapi.programming-hero.com/api/category/${id}`
     );
-    const data = await res.json();  
+    const data = await res.json();
     // console.log(data)
     showTressByCategory(data.plants);
   } catch (e) {
@@ -97,15 +97,17 @@ const showTressByCategory = (trees) => {
     trees.forEach((tree) => {
       //   console.log(tree);
       treesCardContainer.innerHTML += `
-            <div id="${tree.id}" class="card p-4 bg-white h-fit shadow-sm">
+            <div id="${tree.id}" class="card p-4 bg-white h-fit shadow-sm ">
                 <figure class="h-40">
                     <img
                     src="${tree.image}"
                     alt="${tree.name}" />
                 </figure>
-                <div class="overflow-clip w-[200px]">
-                    <h2 class="card-title mt-3">${tree.name}</h2>
-                    <p class="truncate text-[#1F2937] text-sm font-medium my-3">${tree.description}</p>
+                <div class="overflow-clip space-y-4">
+                    <div class="space-y-3">
+                        <h2 class="card-title mt-3">${tree.name}</h2>
+                     <p class="truncate text-[#1F2937] text-sm font-medium my-3">${tree.description}</p> 
+                    </div>
                     <div class="flex justify-between items-center">
                         <div class="badge bg-green-200 text-[#15803D] font-medium">${tree.category}</div>
                         <p class="font-medium text-[#1F2937]">$<span class="price">${tree.price}</span></p>
@@ -177,7 +179,7 @@ const showCart = (carts) => {
   });
   const div = document.createElement("div");
   div.innerHTML = `
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center mt-4 pt-3 border-t border-gray-300">
             <h4 class="font-medium">Total</h4>
             <p><i class="fa-solid fa-bangladeshi-taka-sign"></i><span class="font-medium">${totalPrice}</span></p>
         </div> 
