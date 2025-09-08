@@ -82,7 +82,7 @@ const loadTreesByCategory = async (id) => {
     const res = await fetch(
       `https://openapi.programming-hero.com/api/category/${id}`
     );
-    const data = await res.json();
+    const data = await res.json();  
     // console.log(data)
     showTressByCategory(data.plants);
   } catch (e) {
@@ -103,7 +103,7 @@ const showTressByCategory = (trees) => {
                     src="${tree.image}"
                     alt="${tree.name}" />
                 </figure>
-                <div class=" overflow-clip">
+                <div class="overflow-clip w-[200px]">
                     <h2 class="card-title mt-3">${tree.name}</h2>
                     <p class="truncate text-[#1F2937] text-sm font-medium my-3">${tree.description}</p>
                     <div class="flex justify-between items-center">
