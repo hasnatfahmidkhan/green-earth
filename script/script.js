@@ -5,8 +5,6 @@
 const mobileNav = document.getElementById("mobileNav");
 const overlay = document.getElementById("overlay");
 
-// Array for cart
-let carts = [];
 const showNav = () => {
   mobileNav.classList.remove("right-[-200px]");
   mobileNav.classList.add("right-0");
@@ -27,6 +25,9 @@ const cartCount = document.querySelector("#cartCount");
 const loader = document.querySelector("#loader");
 const treeDetail = document.querySelector("#treeDetail");
 const modalContainer = document.querySelector("#modalContainer");
+
+// Array for cart
+let carts = [];
 
 // Function to show to loading
 const showLoading = () => {
@@ -123,20 +124,22 @@ const showTressByCategory = (trees) => {
             </div>  
       `;
     });
-
-    // Function for cart
-    treesCardContainer.addEventListener("click", (e) => {
-      if (e.target.innerText === "Add to Cart") {
-        handleCart(e);
-      }
-      if (e.target.classList[0] === "card-title") {
-        handleViewModal(e);
-      }
-    });
   } catch (error) {
     console.log(error);
   }
 };
+
+// Event Deligation for All Tree cards:
+// Listent for clicks on the treeCardContainer and check
+// if the target is Add to cart btn or tree title (to open detail modal)
+treesCardContainer.addEventListener("click", (e) => {
+  if (e.target.innerText === "Add to Cart") {
+    handleCart(e);
+  }
+  if (e.target.classList[0] === "card-title") {
+    handleViewModal(e);
+  }
+});
 
 // Function for handle Cart
 const handleCart = (e) => {
@@ -233,7 +236,7 @@ const showCart = (carts) => {
 const handleDeleteItem = (id) => {
   const filterredCart = carts.filter((cart) => Number(cart.id) !== id);
   carts = filterredCart;
-  showCart(carts, cartContainer);
+  showCart(carts);
 };
 
 // === Functioin for  handle view modal===
