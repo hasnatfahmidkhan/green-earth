@@ -83,7 +83,9 @@
           <!-- ===== End: Plant A tree Btn ===== -->
 
           <!-- ===== Start: Mobile Menu ===== -->
-          <div class="block xl:hidden space-x-3 md:space-x-4 text-xl md:text-2xl">
+          <div
+            class="block xl:hidden space-x-3 md:space-x-4 text-xl md:text-2xl"
+          >
             <!-- Mobile cart  -->
             <div class="dropdown dropdown-end">
               <div onclick="showCart()" tabindex="0" class="indicator">
@@ -101,10 +103,7 @@
               ></div>
             </div>
             <!-- Mobile cart  -->
-            <i
-              onclick="showNav()"
-              class="fa-solid fa-bars cursor-pointer"
-            ></i>
+            <i onclick="showNav()" class="fa-solid fa-bars cursor-pointer"></i>
           </div>
 
           <!-- ===== Start: Mobile Nav Links ===== -->
@@ -240,7 +239,12 @@
         </div>
       </section>
       <!-- ===== End: Choose Our Trees Section ===== -->
-
+      <!-- ===== Start: Modal for tree Card Section ===== -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="treeDetail" class="modal">
+        <div id="modalContainer" class="modal-box"></div>
+      </dialog>
+      <!-- ===== End: Modal for tree Card Section ===== -->
       <!-- ===== Start: About the Campaign Section ===== -->
       <section class="my-16 w-11/12 xl:w-8/12 2xl:w-6/12 mx-auto">
         <h2 class="text-center text-3xl md:text-4xl font-semibold">

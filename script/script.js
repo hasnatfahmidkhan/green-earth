@@ -25,6 +25,8 @@ const cartContainer = document.querySelector("#cartContainer");
 const mobileCartContainer = document.querySelector("#mobileCartContainer");
 const cartCount = document.querySelector("#cartCount");
 const loader = document.querySelector("#loader");
+const treeDetail = document.querySelector("#treeDetail");
+const modalContainer = document.querySelector("#modalContainer");
 
 // Function to show to loading
 const showLoading = () => {
@@ -107,7 +109,7 @@ const showTressByCategory = (trees) => {
                 </figure>
                 <div class="overflow-clip space-y-4">
                     <div class="space-y-3">
-                        <h2 class="card-title mt-3">${tree.name}</h2>
+                        <h2 class="card-title mt-3 inline-block">${tree.name}</h2>
                      <p class="truncate text-[#1F2937] text-sm font-medium my-3">${tree.description}</p> 
                     </div>
                     <div class="flex justify-between items-center">
@@ -115,18 +117,21 @@ const showTressByCategory = (trees) => {
                         <p class="font-medium text-[#1F2937]">$<span class="price">${tree.price}</span></p>
                     </div>
                     <div class="card-actions justify-end mt-3">
-                        <button class="add2CartBtn btn bg-[#15803D] hover:bg-[#127737] text-white w-full rounded-full">Add to Cart</button>
+                        <button class="btn bg-[#15803D] hover:bg-[#127737] text-white w-full rounded-full">Add to Cart</button>
                     </div>
                 </div>  
             </div>  
       `;
     });
+
     // Function for cart
-    const addToCartBtn = document.querySelectorAll(".add2CartBtn");
-    addToCartBtn.forEach((cartBtn) => {
-      cartBtn.addEventListener("click", (e) => {
+    treesCardContainer.addEventListener("click", (e) => {
+      if (e.target.innerText === "Add to Cart") {
         handleCart(e);
-      });
+      }
+      if (e.target.classList[0] === "card-title") {
+        handleViewModal(e);
+      }
     });
   } catch (error) {
     console.log(error);
@@ -147,7 +152,7 @@ const handleCart = (e) => {
   showCart(carts);
 };
 
-// Function for add treen into cart
+// Function for add tree into cart
 const showCart = (carts) => {
   // alert("added cart")
   const totalPrice = carts.reduce((acc, cur) => acc + Number(cur.price), 0);
@@ -231,6 +236,34 @@ const handleDeleteItem = (id) => {
   showCart(carts, cartContainer);
 };
 
+// === Functioin for  handle view modal===
+const handleViewModal = async (e) => {
+  const id = e.target.parentNode.parentNode.parentNode.id;
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/plant/${id}`
+  );
+  const data = await res.json();
+  showTreeDetail(data.plants);
+};
+const showTreeDetail = (plants) => {
+  modalContainer.innerHTML = "";
+  modalContainer.innerHTML += `
+          <h3 roll="btn" class="text-lg font-bold">${plants.name}</h3>
+          <img class="h-72 my-3 w-full object-cover rounded-xl" src="${plants.image}" alt="${plants.name}" />
+          <div class="space-y-1">
+              <p><span class="font-semibold ">Category:</span> ${plants.category}</p>
+              <p><span class="font-semibold ">Price:</span> ${plants.price}</p>
+              <p><span class="font-semibold ">Description:</span> ${plants.description}</p>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn bg-green-700 text-white">Close</button>
+            </form>
+          </div>
+  
+  `;
+  treeDetail.showModal();
+};
 // Function to load All Trees Category by Default
 const loadAllTreesCategory = async () => {
   try {
