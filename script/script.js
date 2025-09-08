@@ -128,8 +128,8 @@ const showTressByCategory = (trees) => {
         handleCart(e);
       });
     });
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
   }
 };
 

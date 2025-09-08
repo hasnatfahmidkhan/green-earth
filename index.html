@@ -55,7 +55,7 @@
           <!-- ===== End: Logo ===== -->
 
           <!-- ===== Start: Nav Links ===== -->
-          <ul class="hidden md:flex gap-7 text-base">
+          <ul class="hidden xl:flex gap-7 text-base">
             <li>
               <a class="cursor-pointer hover:underline" href="#about-section"
                 >About</a
@@ -76,39 +76,41 @@
 
           <!-- ===== Start: Plant A tree Btn ===== -->
           <button
-            class="hidden md:inline-block btn text-[#15803D] bg-[#FACC15] border-none rounded-full"
+            class="hidden xl:inline-block btn text-[#15803D] bg-[#FACC15] border-none rounded-full"
           >
             Plant A Tree
           </button>
           <!-- ===== End: Plant A tree Btn ===== -->
 
           <!-- ===== Start: Mobile Menu ===== -->
-          <div class="block md:hidden space-x-3">
+          <div class="block xl:hidden space-x-3 md:space-x-4 text-xl md:text-2xl">
+            <!-- Mobile cart  -->
             <div class="dropdown dropdown-end">
               <div onclick="showCart()" tabindex="0" class="indicator">
-                <span id="cartCount"
+                <span
+                  id="cartCount"
                   class="indicator-item flex items-center justify-center rounded-full bg-red-500 h-4 w-4 text-sm text-white"
                   >0</span
                 >
-                <i class="fa-solid fa-cart-shopping text-xl"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
               </div>
               <div
                 id="mobileCartContainer"
                 tabindex="0"
                 class="dropdown-content menu bg-white rounded-box z-1 w-52 p-2 shadow-sm text-black"
-              >
+              ></div>
             </div>
-            </div>
-
+            <!-- Mobile cart  -->
             <i
               onclick="showNav()"
-              class="fa-solid fa-bars text-xl cursor-pointer"
+              class="fa-solid fa-bars cursor-pointer"
             ></i>
           </div>
 
+          <!-- ===== Start: Mobile Nav Links ===== -->
           <div
             id="mobileNav"
-            class="block md:hidden fixed right-[-200px] bg-[#15803D] top-0 z-20 px-5 pt-5 h-full space-y-3 transition-all duration-300"
+            class="block xl:hidden fixed right-[-200px] bg-[#15803D] top-0 z-20 px-5 pt-5 h-full space-y-3 transition-all duration-300"
           >
             <!-- ===== Start: Close Icon ===== -->
             <div>
@@ -146,6 +148,7 @@
             </button>
             <!-- ===== End: Plant A tree Btn ===== -->
           </div>
+          <!-- ===== End: Mobile Nav Links ===== -->
           <!-- ===== End: Mobile Menu ===== -->
           <div
             onclick="closeNav()"
@@ -212,7 +215,7 @@
       </h2>
       <!-- ===== Start: Choose Our Trees Section ===== -->
       <section
-        class="w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-5 gap-5"
+        class="w-11/12 2xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-5"
       >
         <div class="md:col-span-1 p-2">
           <h2 class="text-xl font-semibold mb-3">Categories</h2>
@@ -225,13 +228,13 @@
         </div>
         <div
           id="treesCardContainer"
-          class="md:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+          class="md:col-span-2 xl:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
         >
           <div id="loader" class="justify-self-center col-span-full">
             <span class="loading loading-dots loading-xl"></span>
           </div>
         </div>
-        <div class="hidden md:block col-span-1 bg-white rounded-xl p-5">
+        <div class="hidden xl:block col-span-1 bg-white rounded-xl p-5">
           <h3 class="font-semibold mb-3 text-xl">Your Cart</h3>
           <div id="cartContainer"></div>
         </div>
@@ -240,8 +243,12 @@
 
       <!-- ===== Start: About the Campaign Section ===== -->
       <section class="my-16 w-11/12 md:w-6/12 mx-auto">
-        <h2 class="text-center text-3xl  md:text-4xl font-semibold">About the Campaign</h2>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-7 mt-10 ">
+        <h2 class="text-center text-3xl md:text-4xl font-semibold">
+          About the Campaign
+        </h2>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-7 mt-10"
+        >
           <div class="flex-1">
             <img src="./assets/about.png" alt="" />
           </div>
