@@ -46,13 +46,13 @@ const loadCategory = async () => {
 // Function to display categories
 const showCategory = (categories) => {
   //   console.log(categories);
-  categoriesContainer.innerHTML = `<li id="allTrees" class="category-btn text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer ">All tress</li>`;
+  categoriesContainer.innerHTML = `<li id="allTrees" class="category-btn border border-green-700  md:border-none text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer ">All tress</li>`;
   //   console.log(categories);
   categories.forEach((category) => {
     const categoryName = category.category_name;
     const id = category.id;
     categoriesContainer.innerHTML += `
-            <li id='${id}' class="category-btn text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
+            <li id='${id}' class="category-btn border border-green-700  md:border-none text-[#1F2937] hover:bg-green-700 hover:text-white rounded-md p-2 cursor-pointer">${categoryName}</li>
     `;
   });
 
