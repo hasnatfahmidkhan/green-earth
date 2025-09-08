@@ -102,10 +102,10 @@ const showTressByCategory = (trees) => {
       //   console.log(tree);
       treesCardContainer.innerHTML += `
             <div id="${tree.id}" class="card p-4 bg-white h-fit shadow-sm ">
-                <figure class="h-40">
+                <figure class="h-40 rounded-xl">
                     <img
                     src="${tree.image}"
-                    alt="${tree.name}" />
+                    alt="${tree.name}" loading="lazy"/>
                 </figure>
                 <div class="overflow-clip space-y-4">
                     <div class="space-y-3">
