@@ -86,17 +86,18 @@
           <div class="block md:hidden space-x-3">
             <div class="dropdown dropdown-end">
               <div onclick="showCart()" tabindex="0" class="indicator">
-                <span
+                <span id="cartCount"
                   class="indicator-item flex items-center justify-center rounded-full bg-red-500 h-4 w-4 text-sm text-white"
-                  >1</span
+                  >0</span
                 >
                 <i class="fa-solid fa-cart-shopping text-xl"></i>
               </div>
               <div
-                id="cartContainer"
+                id="mobileCartContainer"
                 tabindex="0"
                 class="dropdown-content menu bg-white rounded-box z-1 w-52 p-2 shadow-sm text-black"
-              ></div>
+              >
+            </div>
             </div>
 
             <i
