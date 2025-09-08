@@ -162,7 +162,7 @@ const showCart = (carts) => {
     cartContainer.innerHTML += `
             <div id="${cart.id}" class="p-2 mb-2 shadow rounded-2xl">
               <div
-                class="bg-green-100 rounded-2xl flex justify-between items-center px-4 py-3 "
+                class="bg-[#F0FDF4] rounded-2xl flex justify-between items-center px-4 py-3 "
               >
                 <div class="space-y-1">
                   <h5 class="font-medium">${cart.title}</h5>
@@ -188,7 +188,7 @@ const showCart = (carts) => {
     mobileCartContainer.innerHTML += `
             <div id="${cart.id}" class="p-2 mb-2 shadow rounded-2xl">
               <div
-                class="bg-green-100 rounded-2xl flex justify-between items-center px-4 py-3 "
+                class="bg-[#F0FDF4] rounded-2xl flex justify-between items-center px-4 py-3 "
               >
                 <div class="space-y-1">
                   <h5 class="font-medium">${cart.title}</h5>

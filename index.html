@@ -42,7 +42,7 @@
       }
     </style>
   </head>
-  <body class="bg-[#f4fdf0] h-full">
+  <body>
     <!-- ===== Start: Header Section ===== -->
     <header>
       <!-- ===== Start: NavBar Section ===== -->
@@ -208,10 +208,8 @@
     <!-- ===== End: Header Section ===== -->
 
     <!-- ===== Start: Main Section ===== -->
-    <main>
-      <h2 class="text-center text-4xl font-semibold mt-20 mb-12">
-        Choose Our Trees
-      </h2>
+    <main class="bg-[#F0FDF4] py-12">
+      <h2 class="text-center text-4xl font-semibold mb-12">Choose Our Trees</h2>
       <!-- ===== Start: Choose Our Trees Section ===== -->
       <section
         class="w-11/12 2xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-5"
@@ -276,7 +274,68 @@
     <!-- ===== End: Main Section ===== -->
 
     <!-- ===== Start: Footer Section ===== -->
-    <footer></footer>
+    <footer>
+      <!-- ===== Start: Our Impact Section ===== -->
+      <section class="bg-[#CFF0DC] md:h-80 flex flex-col justify-center gap-8 py-10 md:py-0">
+        <h2 class="text-center text-3xl font-medium">Our Impact</h2>
+        <div
+          class="stats flex flex-col md:flex-row items-center justify-center md:w-11/12 2xl:w-10/12 mx-auto gap-10"
+        >
+          <!-- stat 1 -->
+          <div
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
+          >
+            <div class="stat-value text-[#15803D] font-medium">500K+</div>
+            <div class="stat-title font-medium">Trees Planted</div>
+          </div>
+          <!-- stat 2 -->
+          <div
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
+          >
+            <div class="stat-value text-[#15803D] font-medium">120K+</div>
+            <div class="stat-title font-medium">Communities Involved</div>
+          </div>
+          <!-- stat 3 -->
+          <div
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
+          >
+            <div class="stat-value text-[#15803D] font-medium">30+</div>
+            <div class="stat-title font-medium">Countries Reached</div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== End: Our Impact Section ===== -->
+
+      <!-- ===== Start: Plant A Tree Section ===== -->
+      <section class="bg-[#166534] py-8 md:py-16">
+        <h2 class="mb-7 text-2xl font-medium text-center text-white">
+          Plant A Tree Today
+        </h2>
+        <div class="bg-[#15803D] rounded-xl w-80 md:w-[500px] mx-auto p-8">
+          <form class="flex flex-col gap-3 justify-center items-center ">
+            <input type="text" placeholder="Your Name" class="input focus:outline-none w-full" />
+            <input
+              type="email"
+              placeholder="Your Email Address"
+              class="input focus:outline-none w-full"
+            />
+            <select class="select focus:outline-none focus:border-none w-full">
+              <option disabled selected>Number Of Trees</option>
+              <option>1 Tree - $5</option>
+              <option>5 Tree - $25</option>
+              <option>10 Tree - $50</option>
+            </select>
+            <input type="submit" value="Donate Now" class="btn bg-[#FACC15] text-[#15803D] border-none w-full" />
+          </form>
+        </div>
+      </section>
+      <!-- ===== Start: Footer ===== -->
+      <section class="bg-[#14532D] text-white text-center py-5">
+        <p>© 2025 Green Earth. All Rights Reserved.</p>
+      </section>
+      <!-- ===== End: Footer ===== -->
+      <!-- ===== End: Plant A Tree Section ===== -->
+    </footer>
     <!-- ===== End: Footer Section ===== -->
 
     <!-- ===== Start: Script JS ===== -->
