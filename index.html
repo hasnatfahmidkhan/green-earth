@@ -206,6 +206,10 @@
       <!-- ===== End: Banar Section ===== -->
     </header>
     <!-- ===== End: Header Section ===== -->
+    <!-- ===== Start: Alert Notification ===== -->
+
+    <div id="toastContainer" class="toast toast-top toast-end"></div>
+    <!-- ===== End: Alert Notification ===== -->
 
     <!-- ===== Start: Main Section ===== -->
     <main class="bg-[#F0FDF4] py-12">
@@ -276,28 +280,30 @@
     <!-- ===== Start: Footer Section ===== -->
     <footer>
       <!-- ===== Start: Our Impact Section ===== -->
-      <section class="bg-[#CFF0DC] md:h-80 flex flex-col justify-center gap-8 py-10 md:py-0">
+      <section
+        class="bg-[#CFF0DC] md:h-80 flex flex-col justify-center gap-8 py-10 md:py-0"
+      >
         <h2 class="text-center text-3xl font-medium">Our Impact</h2>
         <div
           class="stats flex flex-col md:flex-row items-center justify-center w-10/12 mx-auto gap-10"
         >
           <!-- stat 1 -->
           <div
-            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl "
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
           >
             <div class="stat-value text-[#15803D] font-medium">500K+</div>
             <div class="stat-title font-medium">Trees Planted</div>
           </div>
           <!-- stat 2 -->
           <div
-            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl "
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
           >
             <div class="stat-value text-[#15803D] font-medium">120K+</div>
             <div class="stat-title font-medium">Communities Involved</div>
           </div>
           <!-- stat 3 -->
           <div
-            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl "
+            class="stat shadow bg-white hover:bg-[#99fdbc] flex flex-col items-center py-7 rounded-xl"
           >
             <div class="stat-value text-[#15803D] font-medium">30+</div>
             <div class="stat-title font-medium">Countries Reached</div>
@@ -312,8 +318,12 @@
           Plant A Tree Today
         </h2>
         <div class="bg-[#15803D] rounded-xl w-80 md:w-[500px] mx-auto p-8">
-          <form class="flex flex-col gap-3 justify-center items-center ">
-            <input type="text" placeholder="Your Name" class="input focus:outline-none w-full" />
+          <form class="flex flex-col gap-3 justify-center items-center">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="input focus:outline-none w-full"
+            />
             <input
               type="email"
               placeholder="Your Email Address"
@@ -325,7 +335,11 @@
               <option>5 Tree - $25</option>
               <option>10 Tree - $50</option>
             </select>
-            <input type="submit" value="Donate Now" class="btn bg-[#FACC15] text-[#15803D] border-none w-full" />
+            <input
+              type="submit"
+              value="Donate Now"
+              class="btn bg-[#FACC15] text-[#15803D] border-none w-full"
+            />
           </form>
         </div>
       </section>

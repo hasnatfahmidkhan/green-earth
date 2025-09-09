@@ -29,6 +29,26 @@ const modalContainer = document.querySelector("#modalContainer");
 // Array for cart
 let carts = [];
 
+// Function for showing notification of add to cart
+const showToast = (title) => {
+  // select the toastContainer
+  const toastContainer = document.querySelector("#toastContainer");
+  // create a div (toast)
+  const toast = document.createElement("div");
+  // set the class names
+  toast.className = `alert alert-success font-medium mb-2`;
+  // set innerHTML
+  toast.innerHTML = `
+            <span>${title} has been added the cart.</span>  
+  `;
+  // append the toast into toastContainer
+  toastContainer.appendChild(toast);
+  // toast or notification disappear after 3 second using setTimeout method
+  setTimeout(() => {
+    toast.remove("hidden");
+  }, 3000);
+};
+
 // Function to show to loading
 const showLoading = () => {
   treesCardContainer.innerHTML = `
@@ -153,6 +173,7 @@ const handleCart = (e) => {
     price: price,
   });
   showCart(carts);
+  showToast(title);
 };
 
 // Function for add tree into cart
