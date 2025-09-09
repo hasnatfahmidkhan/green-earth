@@ -269,6 +269,7 @@ const showTreeDetail = (plants) => {
 };
 // Function to load All Trees Category by Default
 const loadAllTreesCategory = async () => {
+  showLoading();
   try {
     const res = await fetch("https://openapi.programming-hero.com/api/plants");
     const data = await res.json();
